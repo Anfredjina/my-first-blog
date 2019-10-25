@@ -1,81 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"/>
-		<title>First Website</title>
-		<style type="text/css">
-		      body {
-		        padding-left: 11em;
-		        background: gold;
-		        color: black;
-		        font-family: arial;
-						font-style: 12;
-		      }
-		      .navbar {
-		       position: absolute;
-		       top: 100px;
-		       left: -20px;
-		       width: 100px;
-		     }
-				 .smaller-image {
-    	 		width: 100px;
-  			 }
-				 .thick-red-border {
-    	 	 border-color: red;
-			   border-width: 10px;
-			   border-style: solid;
-			   border-radius: 50%;
-				 left: -100px;
-				 top: 100px;
-				 width: 100px;
-			  }
-				.box {
-		    border-style: solid;
-		    border-color: white;
-		    border-width: 5px;
-		    text-align: center;
-		    }
-				h2 {
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+	<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-		    padding: 15px;
-				text-align: left;
-				bottom:20px;
-				left:-100px;
-			  }
-				.a {
-				padding:10px;
-				text-align:right;
-				left:-100px;
-				}
-				.b {
-				padding:10px;
-				text-align:left;
-				}
-				.c {
-				padding:10px;
-				text-align:right;
-				}
-		    </style>
-
-	</head>
-	<body>
-	<main>
-
-		<!--Menu de navigation du site-->
-		<ul class="navbar">
-			<li><b>Page d'acceuil</b></li>
-			<li><b>Biographie</b></li>
-			<li><b>Experiences</b></li>
-			<li><b>Contact</b></li>
-		</ul>
-		<div>
-			<h1 class="box">Hey,nice to meet you</h1>
-			<img src="MULTI-COLOR.jpeg" class="smaller-image thick-red-border" >
-			<h2>My name is <b>Anfredjina JEAN-BAPTISTE.</b><h2>
-		  <h3 class="a">My special powers are:my self-motivation,my leadership,my adaptability and I'm very smart.</h3>
-		  <h3 class="b">I want to learn more languages like javascript,python and others.</h3>
-		  <h3 class="c">I'm very excited about new thing and creativity that other person can show.</h3>
-	</div>
-	</main>
-	</body>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+        
+    </body>
 </html>
